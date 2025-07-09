@@ -6,5 +6,15 @@ const formSlice = createSlice({
         name: '',
         cost: 0
     },
-    reduc
+    reducers: {
+        changeName(state,action){
+            state.name = action.payload;
+        },
+        changeCost(state,action){
+            state.cost = action.payload;
+        }
+    }
 });
+
+export const { changeName, changeCost } = formSlice.actions;
+export const formReducer = formSlice.reducer;
